@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かたっぽのくつした - Windows 67</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div class="desktop-icon" data-link="https://discord.com/users/kutu524_" data-name="Discord">
+            <div class="icon-img discord-icon"></div>
+            <div class="icon-label">Discord</div>
+        </div>
+        
+        <div class="desktop-icon" data-link="https://scratch.mit.edu/users/_kutu" data-name="Scratch" style="top: 100px;">
+            <div class="icon-img scratch-icon"></div>
+            <div class="icon-label">Scratch</div>
+        </div>
+        
+        <div class="desktop-icon" data-link="https://github.com/ktpktst-debug" data-name="GitHub" style="top: 200px;">
+            <div class="icon-img github-icon"></div>
+            <div class="icon-label">GitHub</div>
+        </div>
+
+        <div class="desktop-icon" data-link="#" data-name="Profile" style="top: 300px;" onclick="openWindow('profile')">
+            <div class="icon-img computer-icon"></div>
+            <div class="icon-label">oh my pc</div>
+        </div>
+    </div>
+
+    <div class="window" id="welcome-window" style="left: 100px; top: 50px;">
+        <div class="title-bar">
+            <div class="title-bar-text">Welcome - かたっぽのくつした</div>
+            <div class="title-bar-controls">
+                <button class="btn minimize">_</button>
+                <button class="btn maximize">□</button>
+                <button class="btn close" onclick="closeWindow('welcome-window')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>ようこそ！</h2>
+            <p>かたっぽのくつしたをなくしました。</p>
+            <p>Discord: @kutu524_</p>
+            <p> おやすみなさい。</p>
+            <div class="button-container">
+                <button class="win95-btn" onclick="closeWindow('welcome-window')">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="profile-window" style="left: 200px; top: 100px; display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">oh my pc - oh my pcccccccccccc</div>
+            <div class="title-bar-controls">
+                <button class="btn minimize">_</button>
+                <button class="btn maximize">□</button>
+                <button class="btn close" onclick="closeWindow('profile-window')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>かたっぽのくつした</h2>
+            <div class="profile-section">
+                <div class="profile-icon-large" style="background-image: url('icon.png'); background-size: contain; background-repeat: no-repeat; width: 64px; height: 64px;"></div>
+                <div class="profile-info">
+                    <p><strong>なめ:</strong> かたっぽのくつした</p>
+                    <p><strong>Discord:</strong> @kutu524_</p>
+                    <p><strong>Scratch:</strong> _kutu</p>
+                    <p><strong>ign:</strong> _kutu</p>
+                </div>
+            </div>
+            <p>じすこーどとminecraftメイン。</p>
+            <p>アンテやってるけど下手だよ</p>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <button id="start-btn" onclick="toggleStartMenu()">
+            <span class="start-icon"></span> Start
+        </button>
+        <div id="taskbar-items"></div>
+        <div id="clock"></div>
+    </div>
+
+    <div id="start-menu" style="display: none;">
+        <div class="start-menu-sidebar">Windows 67</div>
+        <div class="start-menu-items">
+            <div class="menu-item" onclick="openWindow('profile'); toggleStartMenu();">
+                <span class="menu-icon menu-icon-profile"></span> oh my pc
+            </div>
+            <div class="menu-item" onclick="window.open('https://discord.com/users/kutu524_', '_blank'); toggleStartMenu();">
+                <span class="menu-icon menu-icon-discord"></span> Discord
+            </div>
+            <div class="menu-item" onclick="window.open('https://scratch.mit.edu/users/_kutu', '_blank'); toggleStartMenu();">
+                <span class="menu-icon menu-icon-scratch"></span> Scratch
+            </div>
+            <div class="menu-item" onclick="window.open('https://github.com/ktpktst-debug', '_blank'); toggleStartMenu();">
+                <span class="menu-icon menu-icon-github"></span> GitHub
+            </div>
+            <div class="menu-separator"></div>
+            <div class="menu-item" onclick="location.reload()">
+                <span class="menu-icon menu-icon-restart"></span> Restart
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
