@@ -25,7 +25,17 @@
 
         <div class="desktop-icon" data-link="#" data-name="Profile" style="top: 300px;" onclick="openWindow('profile')">
             <div class="icon-img computer-icon"></div>
-            <div class="icon-label">oh my pc</div>
+            <div class="icon-label">Oh my pc</div>
+        </div>
+
+        <div class="desktop-icon" data-link="#" data-name="Settings" style="top: 400px;" onclick="openWindow('settings')">
+            <div class="icon-img settings-icon-real"></div>
+            <div class="icon-label">ｺﾝﾄﾛｰﾙﾊﾟﾈﾙ</div>
+        </div>
+
+        <div class="desktop-icon" data-link="#" data-name="CMD" style="top: 500px;" onclick="openWindow('cmd')">
+            <div class="icon-img cmd-icon"></div>
+            <div class="icon-label">MS-DOS Prompt</div>
         </div>
     </div>
 
@@ -40,7 +50,7 @@
         </div>
         <div class="window-content">
             <h2>ようこそ！</h2>
-            <p>かたっぽのくつしたをなくしました。</p>
+            <p>ただのくつしたです。</p>
             <p>Discord: @kutu524_</p>
             <p> おやすみなさい。</p>
             <div class="button-container">
@@ -51,7 +61,7 @@
 
     <div class="window" id="profile-window" style="left: 200px; top: 100px; display: none;">
         <div class="title-bar">
-            <div class="title-bar-text">oh my pc - おーまいぴーしー</div>
+            <div class="title-bar-text">Oh my pc - おーまいぴーしー</div>
             <div class="title-bar-controls">
                 <button class="btn minimize">_</button>
                 <button class="btn maximize">□</button>
@@ -69,14 +79,169 @@
                     <p><strong>ign:</strong> _kutu</p>
                 </div>
             </div>
-            <p>discordとminecraftメイン。</p>
+            <p>discordとminecraftとか..</p>
             <p></p>
+        </div>
+    </div>
+
+    <div class="window" id="settings-window" style="left: 250px; top: 100px; display: none; width: 550px; height: 450px;">
+        <div class="title-bar">
+            <div class="title-bar-text">コントロール パネル</div>
+            <div class="title-bar-controls">
+                <button class="btn minimize">_</button>
+                <button class="btn maximize">□</button>
+                <button class="btn close" onclick="closeWindow('settings-window')">×</button>
+            </div>
+        </div>
+        <div class="window-content control-panel-explorer">
+            <div class="cp-toolbar">
+                <div class="cp-menu-bar">
+                    <span>ファイル(F)</span>
+                    <span>編集(E)</span>
+                    <span>表示(V)</span>
+                    <span>移動(G)</span>
+                    <span>お気に入り(F)</span>
+                    <span>ヘルプ(H)</span>
+                </div>
+                <div class="cp-address-bar">
+                    <span class="address-label">アドレス</span>
+                    <div class="address-box">
+                        <img src="icon_controlpanel.png" class="address-icon">
+                        <span>コントロール パネル</span>
+                        <span class="address-dropdown">▼</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-main-area">
+                <div class="cp-description-pane">
+                    <div class="cp-desc-header">
+                        <img src="icon_controlpanel.png" class="cp-desc-icon">
+                        <h2>コントロール パネル</h2>
+                    </div>
+                    <div class="cp-color-line">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="cp-desc-text">コントロール パネルの設定を使用して、くつしたをカスタマイズできません。</p>
+                    <p class="cp-desc-text">アイテムを選択して説明を表示します。</p>
+                    <div id="cp-item-description" class="cp-item-desc-box">
+                        <p>アイコンをクリックして詳細を表示...</p>
+                    </div>
+                </div>
+                <div class="cp-icons-pane">
+                    <div class="cp-icons-grid">
+                        <div class="cp-icon-item" data-item="accessibility" onclick="selectCpItem(this, 'accessibility')">
+                            <img src="icon_accessibility.png" alt="アクセシビリティ">
+                            <span>アクセシビリティ</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="hardware" onclick="selectCpItem(this, 'hardware')">
+                            <img src="icon_hardware.png" alt="ハードウェア">
+                            <span>ハードウェアの追加</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="programs" onclick="selectCpItem(this, 'programs')">
+                            <img src="icon_programs.png" alt="プログラム">
+                            <span>プログラムの追加と削除</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="datetime" onclick="selectCpItem(this, 'datetime')">
+                            <img src="icon_datetime.png" alt="日付と時刻">
+                            <span>日付と時刻</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="display" onclick="selectCpItem(this, 'display')">
+                            <img src="icon_display.png" alt="ディスプレイ">
+                            <span>ディスプレイ</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="fonts" onclick="selectCpItem(this, 'fonts')">
+                            <img src="icon_fonts.png" alt="フォント">
+                            <span>フォント</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="game" onclick="selectCpItem(this, 'game')">
+                            <img src="icon_joystick.png" alt="ゲーム">
+                            <span>ゲーム コントローラ</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="internet" onclick="selectCpItem(this, 'internet')">
+                            <img src="icon_internet.png" alt="インターネット">
+                            <span>インターネット オプション</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="keyboard" onclick="selectCpItem(this, 'keyboard')">
+                            <img src="icon_keyboard.png" alt="キーボード">
+                            <span>キーボード</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="mouse" onclick="selectCpItem(this, 'mouse')">
+                            <img src="icon_mouse.png" alt="マウス">
+                            <span>マウス</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="multimedia" onclick="selectCpItem(this, 'multimedia')">
+                            <img src="icon_multimedia.png" alt="マルチメディア">
+                            <span>マルチメディア</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="network" onclick="selectCpItem(this, 'network')">
+                            <img src="icon_network.png" alt="ネットワーク">
+                            <span>ネットワーク</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="passwords" onclick="selectCpItem(this, 'passwords')">
+                            <img src="icon_passwords.png" alt="パスワード">
+                            <span>パスワード</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="power" onclick="selectCpItem(this, 'power')">
+                            <img src="icon_battery.png" alt="電源">
+                            <span>電源管理</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="printers" onclick="selectCpItem(this, 'printers')">
+                            <img src="icon_printer.png" alt="プリンタ">
+                            <span>プリンタ</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="regional" onclick="selectCpItem(this, 'regional')">
+                            <img src="icon_regional.png" alt="地域設定">
+                            <span>地域の設定</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="sound" onclick="selectCpItem(this, 'sound')">
+                            <img src="icon_sound.png" alt="サウンド">
+                            <span>サウンド</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="system" onclick="selectCpItem(this, 'system')">
+                            <img src="icon_system.png" alt="システム">
+                            <span>システム</span>
+                        </div>
+                        <div class="cp-icon-item" data-item="users" onclick="selectCpItem(this, 'users')">
+                            <img src="icon_users.png" alt="ユーザー">
+                            <span>ユーザー</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="cmd-window" style="left: 300px; top: 150px; display: none; width: 500px; height: 350px;">
+        <div class="title-bar">
+            <div class="title-bar-text">MS-DOSプロンプト</div>
+            <div class="title-bar-controls">
+                <button class="btn minimize">_</button>
+                <button class="btn maximize">□</button>
+                <button class="btn close" onclick="closeWindow('cmd-window')">×</button>
+            </div>
+        </div>
+        <div class="window-content cmd-content">
+            <div class="cmd-screen" id="cmd-screen">
+                <div class="cmd-output">
+                    <p>Microsoft(R) Windows 95</p>
+                    <p>(C)Copyright Microsoft Corp 1981-1995.</p>
+                    <p></p>
+                    <p>C:\WINDOWS></p>
+                </div>
+                <div class="cmd-input-line">
+                    <span class="cmd-prompt">C:\WINDOWS></span>
+                    <input type="text" class="cmd-input" id="cmd-input" spellcheck="false" autocomplete="off">
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="taskbar">
         <button id="start-btn" onclick="toggleStartMenu()">
-            <span class="start-icon"></span> Start
+            <span class="start-icon"></span> ｽﾀｰﾄ
         </button>
         <div id="taskbar-items"></div>
         <div id="clock"></div>
@@ -86,7 +251,7 @@
         <div class="start-menu-sidebar">Windows 67</div>
         <div class="start-menu-items">
             <div class="menu-item" onclick="openWindow('profile'); toggleStartMenu();">
-                <span class="menu-icon menu-icon-profile"></span> oh my pc
+                <span class="menu-icon menu-icon-profile"></span> Oh my pc
             </div>
             <div class="menu-item" onclick="window.open('https://discord.com/users/kutu524_', '_blank'); toggleStartMenu();">
                 <span class="menu-icon menu-icon-discord"></span> Discord
@@ -98,8 +263,15 @@
                 <span class="menu-icon menu-icon-github"></span> GitHub
             </div>
             <div class="menu-separator"></div>
+            <div class="menu-item" onclick="openWindow('settings'); toggleStartMenu();">
+                <span class="menu-icon menu-icon-settings wingdings">@</span> コントロールパネル
+            </div>
+            <div class="menu-item" onclick="openWindow('cmd'); toggleStartMenu();">
+                <span class="menu-icon menu-icon-cmd">C:\_</span> MS-DOS Prompt
+            </div>
+            <div class="menu-separator"></div>
             <div class="menu-item" onclick="location.reload()">
-                <span class="menu-icon menu-icon-restart"></span> Restart
+                <span class="menu-icon menu-icon-restart wingdings">q</span> Restart
             </div>
         </div>
     </div>
